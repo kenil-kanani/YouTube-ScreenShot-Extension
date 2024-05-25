@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Kenil",
+  "short_name": "N-C-S",
+  "version": "0.0.1",
+  "description": "ScreenShot App",
+
+  "permissions": [
+    "downloads",
+    "unlimitedStorage",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
+}
